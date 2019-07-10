@@ -1,11 +1,17 @@
 <resources>
+
+    <!--Your comment-->
+
     <string name="app_name">LeopardLeap</string>
 
-
+    <!--MainActivity-->
+    <string name ="visitor_btn">Visitor</string>
+    <string name="guide_btn">Tour Guide</string>
     <string name="welcome">Welcome to Wentworth!</string>
     <string name="identify">Are you a...</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Visitor_Landing-->
+    <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
+    <string name="tap_message_B">This Will Assign You To Your Group</string>
 
 </resources>
