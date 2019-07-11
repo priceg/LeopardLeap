@@ -14,9 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Button labeled "Visitor"
         Button visitor_btn = (Button)findViewById(R.id.visitor_btn);
+        //Button labeled "Tour Guide"
         Button guide_btn = (Button)findViewById(R.id.guide_btn);
 
+        //This will take the user down the "Visitor" path; no login required
         visitor_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //This will take the user down the "Tour Guide" path; login required
         guide_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
