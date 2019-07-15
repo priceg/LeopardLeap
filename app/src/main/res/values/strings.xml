@@ -1,3 +1,30 @@
 <resources>
+
+    <!--General-->
+
     <string name="app_name">LeopardLeap</string>
+    <string name="end_btn">End Tour</string>
+
+    <!--MainActivity-->
+    <string name="visitor_btn">Visitor</string>
+    <string name="guide_btn">Tour Guide</string>
+    <string name="welcome">Welcome to Wentworth!</string>
+    <string name="identify">Are you a&#8230;</string>
+
+    <!--Visitor_Landing-->
+    <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
+    <string name="tap_message_B">This Will Assign You To Your Group</string>
+
+    <!--TourGuide_Landing-->
+    <string name="start_btn">Begin Tour</string>
+
+    <!--Visitor_Roadmap-->
+    <string name="header">Your Group Roadmap</string>
+    <string name="select">Select A Checkpoint For More Information</string>
+
+    <!--TourGuide_Roadmap-->
+
+
+    <!--Location-->
+
 </resources>
