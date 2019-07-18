@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    android:background="#8e8f90"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="147dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:text="@string/title" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="342dp"
+        android:layout_height="426dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="287dp"
+        android:src="@drawable/leopard_statue" />
+
+    <TextView
+        android:id="@+id/blurb"
+        android:layout_width="362dp"
+        android:layout_height="103dp"
+        android:layout_alignTop="@+id/picture"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="431dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="178dp"
+        android:text="@string/blurb" />
+
+    <Button
+        android:id="@+id/directions"
+        android:layout_width="273dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/blurb"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="112dp"
+        android:background="#8e8f90"
+        android:fontFamily="georgia"
+        android:text="@string/directions" />
+
+    <ImageButton
+        android:id="@+id/close"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/x_button"/>
+
+</RelativeLayout>
