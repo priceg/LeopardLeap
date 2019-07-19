@@ -2,6 +2,7 @@ package com.example.leopardleap;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,15 @@ public class TourGuide_Roadmap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_guide__roadmap);
+
+        Button end_btn = (Button)findViewById(R.id.end_btn);
+        end_btn.setOnClickListener(new View.OnClickListener() { @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass( TourGuide_Roadmap.this, MainActivity.class);
+            startActivity(intent);
+        }
+        });
 
         // Get the application context
         mContext = getApplicationContext();

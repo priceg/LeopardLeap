@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TourGuide_Roadmap"></activity>
+        <activity
+            android:name=".ui.login.TourGuide_LogIn"
+            android:label="@string/title_activity_tour_guide__log_in"></activity>
+        <activity android:name=".TourGuide_Roadmap" />
         <activity android:name=".Visitor_Roadmap" />
         <activity android:name=".TourGuide_Landing" />
         <activity android:name=".Visitor_Landing" />
