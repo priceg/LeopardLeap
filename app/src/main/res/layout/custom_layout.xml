@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_custom_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    android:background="#8e8f90"
+    >
+
+    <ImageButton
+        android:id="@+id/close"
+        android:layout_width="33dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/title"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-45dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/x_button" />
+
+    <TextView
+        android:id="@+id/blurb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="316dp"
+        android:padding="25sp"
+        android:text="@string/blurb" />
+
+    <Button
+        android:id="@+id/directions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="507dp"
+        android:text="@string/directions" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="283dp"
+        android:layout_height="242dp"
+        android:layout_above="@+id/blurb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-316dp"
+        android:src="@drawable/leopard_statue" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/picture"
+        android:layout_alignStart="@+id/picture"
+        android:layout_alignEnd="@+id/picture"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="-6dp"
+        android:fontFamily="arial"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+</RelativeLayout>

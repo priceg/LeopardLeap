@@ -11,11 +11,27 @@
     <string name="welcome">Welcome to Wentworth!</string>
     <string name="identify">Are you a&#8230;</string>
 
+
+    <!-- TourGuide_LogIn-->
+    <string name="welcome2">Welcome </string>
+    <string name="hi">Hello! Please Log In To Start A Tour</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tour_guide__log_in">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
     <!--Visitor_Landing-->
     <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
     <string name="tap_message_B">This Will Assign You To Your Group</string>
 
     <!--TourGuide_Landing-->
+    <string name="tap_message_C">Tap Your Phone to Your Group Members</string>
+    <string name="tap_message_D">Begin Tour When You Are Ready</string>
     <string name="start_btn">Begin Tour</string>
 
     <!--Visitor_Roadmap-->
@@ -23,8 +39,17 @@
     <string name="select">Select A Checkpoint For More Information</string>
 
     <!--TourGuide_Roadmap-->
-
+    <string name="please">Remember To Tap Each Checkpoint Upon Arrival</string>
 
     <!--Location-->
+    <string name="title">TITLE</string>
+    <string name="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam in urna vestibulum, lobortis elit in, finibus urna. Suspendisse
+        viverra condimentum bibendum. Mauris venenatis erat ac odio imperdiet,
+        ut iaculis massa laoreet. Donec iaculis pretium magna, a interdum dolor
+        suscipit in. Morbi vestibulum sollicitudin gravida. Donec non felis quis
+        eros consequat faucibus.</string>
+    <string name="directions">Get Directions</string>
+
 
 </resources>
