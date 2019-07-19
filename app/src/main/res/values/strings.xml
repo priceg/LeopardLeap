@@ -24,6 +24,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="back">Back to Main Page</string>
 
     <!--Visitor_Landing-->
     <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
