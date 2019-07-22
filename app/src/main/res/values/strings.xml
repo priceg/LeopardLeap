@@ -34,6 +34,7 @@
     <string name="tap_message_C">Tap Your Phone to Your Group Members</string>
     <string name="tap_message_D">Begin Tour When You Are Ready</string>
     <string name="start_btn">Begin Tour</string>
+    <string name="counter">Group Size:</string>
 
     <!--Visitor_Roadmap-->
     <string name="header">Your Group Roadmap</string>
