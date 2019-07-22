@@ -13,9 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.lang.invoke.ConstantCallSite;
 
@@ -95,8 +99,13 @@ public class TourGuide_Roadmap extends AppCompatActivity {
                 }
 
 
-                // Get a reference for the custom view close button
-                ImageButton closeButton = (ImageButton) customView.findViewById(R.id.close);
+                // Get a reference for the custom view elements
+                final ImageButton closeButton = (ImageButton) customView.findViewById(R.id.close);
+                final TextView title = (TextView)customView.findViewById(R.id.title);
+                final ImageView picture = (ImageView) customView.findViewById(R.id.picture);
+                final TextView blurb = (TextView) customView.findViewById(R.id.blurb);
+                final Button directions = (Button) customView.findViewById(R.id.directions);
+
 
                 // Set a click listener for the popup window close button
                 closeButton.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +114,15 @@ public class TourGuide_Roadmap extends AppCompatActivity {
                         // Dismiss the popup window
                         mPopupWindow.dismiss();
                         Log.v(TAG, "Window closed");
+                    }
+                });
+
+                directions.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setClass( TourGuide_Roadmap.this, Directions.class);
+                        startActivity(intent);
                     }
                 });
 

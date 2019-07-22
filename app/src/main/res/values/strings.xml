@@ -43,15 +43,19 @@
     <!--TourGuide_Roadmap-->
     <string name="please">Remember To Tap Each Checkpoint Upon Arrival</string>
 
-    <!--Location-->
-    <string name="title">TITLE</string>
-    <string name="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam in urna vestibulum, lobortis elit in, finibus urna. Suspendisse
-        viverra condimentum bibendum. Mauris venenatis erat ac odio imperdiet,
-        ut iaculis massa laoreet. Donec iaculis pretium magna, a interdum dolor
-        suscipit in. Morbi vestibulum sollicitudin gravida. Donec non felis quis
-        eros consequat faucibus.</string>
-    <string name="directions">Get Directions</string>
+                <!--Location Pop-up-->
+                <string name="title">TITLE</string>
+                <string name="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam in urna vestibulum, lobortis elit in, finibus urna. Suspendisse
+                    viverra condimentum bibendum. Mauris venenatis erat ac odio imperdiet,
+                    ut iaculis massa laoreet. Donec iaculis pretium magna, a interdum dolor
+                    suscipit in. Morbi vestibulum sollicitudin gravida. Donec non felis quis
+                    eros consequat faucibus.</string>
+                <string name="directions">Get Directions</string>
+
+    <!--Directions-->
+    <string name="back2">GO BACK</string>
+    <string name="route">Here Is The Route To Your Destination</string>
 
 
 </resources>
