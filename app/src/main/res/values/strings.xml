@@ -24,6 +24,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="back">Back to Main Page</string>
 
     <!--Visitor_Landing-->
     <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
@@ -33,6 +34,7 @@
     <string name="tap_message_C">Tap Your Phone to Your Group Members</string>
     <string name="tap_message_D">Begin Tour When You Are Ready</string>
     <string name="start_btn">Begin Tour</string>
+    <string name="counter">Group Size:</string>
 
     <!--Visitor_Roadmap-->
     <string name="header">Your Group Roadmap</string>
@@ -41,15 +43,55 @@
     <!--TourGuide_Roadmap-->
     <string name="please">Remember To Tap Each Checkpoint Upon Arrival</string>
 
-    <!--Location-->
+    <!--Location Pop-up-->
     <string name="title">TITLE</string>
     <string name="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam in urna vestibulum, lobortis elit in, finibus urna. Suspendisse
-        viverra condimentum bibendum. Mauris venenatis erat ac odio imperdiet,
-        ut iaculis massa laoreet. Donec iaculis pretium magna, a interdum dolor
-        suscipit in. Morbi vestibulum sollicitudin gravida. Donec non felis quis
-        eros consequat faucibus.</string>
+                    Nullam in urna vestibulum, lobortis elit in, finibus urna. Suspendisse
+                    viverra condimentum bibendum. Mauris venenatis erat ac odio imperdiet,
+                    ut iaculis massa laoreet. Donec iaculis pretium magna, a interdum dolor
+                    suscipit in. Morbi vestibulum sollicitudin gravida. Donec non felis quis
+                    eros consequat faucibus.</string>
     <string name="directions">Get Directions</string>
+
+
+    <!--BLURBS FOR LOCATIONS-->
+    <!--Credit: https://wit.edu/about-wentworth/life-boston/campus-map-->
+    <string name="tansey_blurb">Tansey Gymnasium is located in the Nelson Recreation
+                Center. Holds indoor athletic games and other events.</string>
+
+    <string name="wattson_blurb">Home to Watson Auditorium, a space for showcases,
+                exhibitions, banquets and more. </string>
+
+    <string name="beatty_blurb">Beatty Hall houses the Flanagan Campus Center,
+                Douglas D. Schumann Library &amp; Learning Commons, Division of Technical Services,
+                the campus bookstore, the Info Hub, and the Schumann Fitness Center, among other
+                facilities. In short, it is the central hub of Wentworth campus.</string>
+
+    <string name="leopard_blurb">Do you know that our Leopard Statue is 6ft tall?
+                </string>
+
+    <string name="baker_blurb">Baker Hall is one of our first year residence hall
+                communities. Baker Hall consists of double and triple bedrooms along a corridor
+                with a common bathroom. Each student receives a bed, desk, desk chair, and bureau
+                with shelves and a bureau with closet space. Baker Hall has a lounge on each floor,
+                a laundry room, and vending machines.</string>
+
+    <string name="huntington_blurb">555 Huntington Avenue is home to 364 upperclassmen
+                students and the Center for Community and Learning Partnerships, our division of
+                service learning. This building is designed with 58 suites ranging in occupancy from
+                five to nine residents in single, double, and triple bedrooms. Suites include a
+                common room, kitchen, and one or two bathrooms depending on size. </string>
+
+    <!--Directions-->
+    <string name="back2">GO BACK</string>
+    <string name="route">Here Is The Route To Your Destination</string>
+
+
+    <!--NFC-->
+    <string name="please_tag">Tap NFC Tag to Read Contents</string>
+    <string name="tag_detected">NFC Tag Detected !</string>
+    <string name="read_tag">Read from NFC Tag</string>
+    <string name="hint_message">Message</string>
 
 
 </resources>
