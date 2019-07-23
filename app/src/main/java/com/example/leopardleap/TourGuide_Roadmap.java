@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.constraint.ConstraintLayout;
@@ -49,6 +50,8 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     NfcAdapter nfcAdapter;
     PendingIntent pendingIntent;
     IntentFilter writeTagFilters[];
+
+    Tag myTag;
 
     private PopupWindow mPopupWindow;
 
