@@ -40,6 +40,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.892" />
 
+
+
     <TextView
         android:id="@+id/tap_message_C"
         android:layout_width="wrap_content"
@@ -95,6 +97,7 @@
         app:layout_constraintVertical_bias="0.396"
         app:srcCompat="@drawable/ic_nfc" />
 
+
     <TextView
         android:id="@+id/counter"
         android:layout_width="wrap_content"
@@ -111,4 +114,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.64" />
+  
 </android.support.constraint.ConstraintLayout>

@@ -77,5 +77,10 @@ public class TourGuide_Landing extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Thread thread = new Thread(new TourGuideConnect(getApplicationContext()));
+        thread.start();
     }
+
+
 }

@@ -39,5 +39,9 @@ public class Visitor_Landing extends AppCompatActivity {
 
     }
 
-
+    protected void connect(View v)
+    {
+        VisitorConnect vc = new VisitorConnect();
+        vc.execute("10.220.89.52", "The connection works");
+    }
 }
