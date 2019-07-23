@@ -3,7 +3,6 @@
     package="com.example.leopardleap">
 
     <uses-permission android:name="android.permission.NFC" />
-    <uses-feature android:name="android.hardware.nfc" android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Directions"></activity>
+        <activity android:name=".Directions"/>
         <activity
             android:name=".ui.login.TourGuide_LogIn"
             android:label="@string/title_activity_tour_guide__log_in" />
-        <activity android:name=".TourGuide_Roadmap" />
+        <activity android:name=".TourGuide_Roadmap"/>
         <activity android:name=".Visitor_Roadmap" />
         <activity android:name=".TourGuide_Landing" />
         <activity android:name=".Visitor_Landing" />
@@ -26,15 +25,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-            <meta-data
-                android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/nfc_tech_filter" />
         </activity>
     </application>
 
