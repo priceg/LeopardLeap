@@ -16,9 +16,9 @@
         android:layout_alignTop="@+id/title"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-45dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/x_button" />
@@ -49,7 +49,7 @@
     <ImageView
         android:id="@+id/picture"
         android:layout_width="283dp"
-        android:layout_height="242dp"
+        android:layout_height="231dp"
         android:layout_above="@+id/blurb"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-316dp"
@@ -57,19 +57,20 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="112dp"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="31dp"
         android:layout_above="@+id/picture"
         android:layout_alignStart="@+id/picture"
         android:layout_alignEnd="@+id/picture"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="-6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginBottom="0dp"
         android:fontFamily="arial"
         android:text="@string/title"
         android:textAlignment="center"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:textStyle="italic" />
 
 </RelativeLayout>
