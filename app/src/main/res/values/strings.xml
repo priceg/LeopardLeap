@@ -14,7 +14,7 @@
 
     <!-- TourGuide_LogIn-->
     <string name="welcome2">Welcome </string>
-    <string name="hi">Hello! Please Log In To Start A Tour</string>
+    <string name="hi">Hello! Log In To Start A Tour</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tour_guide__log_in">Sign in</string>
     <string name="prompt_email">Email</string>
@@ -41,7 +41,7 @@
     <string name="select">Select A Checkpoint For More Information</string>
 
     <!--TourGuide_Roadmap-->
-    <string name="please">Remember To Tap Each Checkpoint Upon Arrival</string>
+    <string name="please">Remember: Tap Checkpoints Upon Arrival!</string>
 
     <!--Location Pop-up-->
     <string name="title">TITLE</string>
