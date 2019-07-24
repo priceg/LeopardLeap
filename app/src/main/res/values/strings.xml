@@ -27,11 +27,11 @@
     <string name="back">Back to Main Page</string>
 
     <!--Visitor_Landing-->
-    <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
+    <string name="tap_message_A">Tap Phone to Your Tour Guide\'s</string>
     <string name="tap_message_B">This Will Assign You To Your Group</string>
 
     <!--TourGuide_Landing-->
-    <string name="tap_message_C">Tap Your Phone to Your Group Members</string>
+    <string name="tap_message_C">Tap Phone to Your Group Members\'</string>
     <string name="tap_message_D">Begin Tour When You Are Ready</string>
     <string name="start_btn">Begin Tour</string>
     <string name="counter">Group Size:</string>
