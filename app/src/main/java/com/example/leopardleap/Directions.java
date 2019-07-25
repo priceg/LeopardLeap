@@ -75,7 +75,7 @@ public class Directions extends AppCompatActivity {
 
             Bundle bundle = this.getIntent().getExtras();
             String title = bundle.getString("Title");
-            Log.d(TAG, "We got it SECOND: " + title);
+
 
             switch(message) {
 
@@ -240,7 +240,6 @@ public class Directions extends AppCompatActivity {
     }
 
     private void initNFC(){
-
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
 
