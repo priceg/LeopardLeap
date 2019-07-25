@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,12 +16,16 @@ public class TourGuideConnect implements Runnable{
     ServerSocket ss;
     Socket client;
     DataInputStream din;
+    DataOutputStream dout;
     BufferedReader bread;
     String message;
+    String notify;
     Handler handler = new Handler();
+    boolean tapped;
     public TourGuideConnect(Context c)
     {
         context = c;
+        tapped = false;
     }
     @Override
     public void run() {
@@ -38,9 +43,24 @@ public class TourGuideConnect implements Runnable{
                         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                     }
                 });
+
+                if(tapped)
+                {
+                    //send notification message to client
+                    dout = new DataOutputStream(client.getOutputStream());
+                    notify = "notify";
+                    dout.writeUTF(notify);
+                    dout.close();
+                    tapped = false;
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void tap()
+    {
+        tapped = true;
     }
 }

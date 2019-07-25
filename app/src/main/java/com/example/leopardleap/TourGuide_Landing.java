@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 
 public class TourGuide_Landing extends AppCompatActivity {
 
+    TourGuideConnect tc;
 
     int count = 0;
     Button end_btn;
@@ -77,10 +78,14 @@ public class TourGuide_Landing extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Thread thread = new Thread(new TourGuideConnect(getApplicationContext()));
+        tc = new TourGuideConnect(getApplicationContext());
+        Thread thread = new Thread(tc);
         thread.start();
     }
 
+    protected void tap(View v)
+    {
+        tc.tap();
+    }
 
 }

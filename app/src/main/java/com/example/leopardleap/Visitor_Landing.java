@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 
 public class Visitor_Landing extends AppCompatActivity {
 
+    VisitorConnect vc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,12 @@ public class Visitor_Landing extends AppCompatActivity {
 
     protected void connect(View v)
     {
-        VisitorConnect vc = new VisitorConnect();
-        vc.execute("10.220.89.52", "The connection works");
+        vc = new VisitorConnect(getApplicationContext());
+        vc.execute("192.168.1.207", "The connection works");
+    }
+
+    protected void quit(View v)
+    {
+        vc.disconnect();
     }
 }
