@@ -14,7 +14,7 @@
 
     <!-- TourGuide_LogIn-->
     <string name="welcome2">Welcome </string>
-    <string name="hi">Hello! Please Log In To Start A Tour</string>
+    <string name="hi">Hello! Log In To Start A Tour</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tour_guide__log_in">Sign in</string>
     <string name="prompt_email">Email</string>
@@ -27,11 +27,11 @@
     <string name="back">Back to Main Page</string>
 
     <!--Visitor_Landing-->
-    <string name="tap_message_A">Tap Your Phone to Your Tour Guide\'s Phone</string>
+    <string name="tap_message_A">Tap Phone to Your Tour Guide\'s</string>
     <string name="tap_message_B">This Will Assign You To Your Group</string>
 
     <!--TourGuide_Landing-->
-    <string name="tap_message_C">Tap Your Phone to Your Group Members</string>
+    <string name="tap_message_C">Tap Phone to Your Group Members\'</string>
     <string name="tap_message_D">Begin Tour When You Are Ready</string>
     <string name="start_btn">Begin Tour</string>
     <string name="counter">Group Size:</string>
@@ -41,7 +41,7 @@
     <string name="select">Select A Checkpoint For More Information</string>
 
     <!--TourGuide_Roadmap-->
-    <string name="please">Remember To Tap Each Checkpoint Upon Arrival</string>
+    <string name="please">Remember: Tap Checkpoints Upon Arrival!</string>
 
     <!--Location Pop-up-->
     <string name="title">TITLE</string>
@@ -84,7 +84,9 @@
 
     <!--Directions-->
     <string name="back2">GO BACK</string>
-    <string name="route">Here Is The Route To Your Destination</string>
+    <string name="nfc_first">Tap The Tag At Your Starting Location</string>
+    <string name="route_second">Here Is The Route To Your Destination</string>
+    <string name="here">You\'re Already There!</string>
 
 
     <!--NFC-->

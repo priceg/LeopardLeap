@@ -39,6 +39,14 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
 
     static String TAG = "MyApp";
 
+    private ImageView leopard_check;
+    private ImageView beatty_check;
+    private ImageView tansey_check;
+    private ImageView huntington_check;
+    private ImageView baker_check;
+    private ImageView wattson_check;
+
+
     //Buttons for checkpoints along Roadmap
     private Button tansey;
     private Button wattson;
@@ -53,16 +61,14 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     private Activity mActivity;
     private ConstraintLayout mConstraintLayout;
 
-    //NFC Related
     private NfcAdapter mNfcAdapter;
-    private TextView nfcMessage;
 
-    private TextView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_guide__roadmap);
+
         initNFC();
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
@@ -87,6 +93,13 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
         leopard = (Button) findViewById(R.id.button6);
         baker = (Button) findViewById(R.id.button5);
         huntington = (Button) findViewById(R.id.button4);
+
+        leopard_check = findViewById(R.id.check2);
+        tansey_check = findViewById(R.id.check3);
+        beatty_check = findViewById(R.id.check);
+        baker_check = findViewById(R.id.check4);
+        wattson_check = findViewById(R.id.check1);
+        huntington_check = findViewById(R.id.check5);
 
         Log.v(TAG, "Button1 is clicked");
 
@@ -144,6 +157,9 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(TourGuide_Roadmap.this, Directions.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Title", title.toString());
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -202,7 +218,6 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     }
 
     public void onNfcDetected(Ndef ndef){
-
         readFromNFC(ndef);
     }
 
@@ -215,6 +230,29 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
             //String "message" contains the contents of the NFC tag in String form
             String message = new String(ndefMessage.getRecords()[0].getPayload());
             Log.d(TAG, "readFromNFC: " + message);
+
+            switch(message) {
+                case "1001":
+                    leopard_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                case "1003":
+                    beatty_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                case "1005":
+                    tansey_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                case "1007":
+                    huntington_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                case "1009":
+                    baker_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                case "1011":
+                    wattson_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    break;
+                default:
+                    break;
+            }
             ndef.close();
 
         } catch (IOException | FormatException e) {
@@ -223,42 +261,42 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
         }
     }
 
-    private void initNFC(){
+        private void initNFC(){
 
-        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
-    }
+            mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
-        IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
-        IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
-        IntentFilter[] nfcIntentFilter = new IntentFilter[]{techDetected,tagDetected,ndefDetected};
+        @Override
+        protected void onResume() {
+            super.onResume();
+            IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
+            IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
+            IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
+            IntentFilter[] nfcIntentFilter = new IntentFilter[]{techDetected,tagDetected,ndefDetected};
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-        if(mNfcAdapter!= null)
-            mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
-    }
+            PendingIntent pendingIntent = PendingIntent.getActivity(
+                    this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+            if(mNfcAdapter!= null)
+                mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
+        }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(mNfcAdapter!= null)
-            mNfcAdapter.disableForegroundDispatch(this);
-    }
+        @Override
+        protected void onPause() {
+            super.onPause();
+            if(mNfcAdapter!= null)
+                mNfcAdapter.disableForegroundDispatch(this);
+        }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        @Override
+        protected void onNewIntent(Intent intent) {
+            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
-        Log.d(TAG, "onNewIntent: "+intent.getAction());
+            Log.d(TAG, "onNewIntent: "+intent.getAction());
 
-        if(tag != null) {
-            Toast.makeText(this, getString(R.string.tag_detected), Toast.LENGTH_SHORT).show();
-            Ndef ndef = Ndef.get(tag);
-            onNfcDetected(ndef);
+            if(tag != null) {
+                Toast.makeText(this, getString(R.string.tag_detected), Toast.LENGTH_SHORT).show();
+                Ndef ndef = Ndef.get(tag);
+                onNfcDetected(ndef);
+            }
         }
     }
-}

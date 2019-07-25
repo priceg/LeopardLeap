@@ -8,16 +8,16 @@
     tools:context=".Directions">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="428dp"
-        android:layout_height="556dp"
+        android:id="@+id/map"
+        android:layout_width="376dp"
+        android:layout_height="589dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/gym_to_aud" />
+        app:srcCompat="@drawable/map" />
 
     <TextView
         android:id="@+id/route"
@@ -26,10 +26,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="arial"
-        android:text="@string/route"
+        android:text="@string/nfc_first"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
