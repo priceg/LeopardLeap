@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="2dp"
-    android:background="#8e8f90"
+    android:background="#c9242b"
     >
 
     <ImageButton
@@ -30,9 +30,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="316dp"
+        android:layout_marginTop="303dp"
+        android:fontFamily="georgia"
         android:padding="25sp"
-        android:text="@string/blurb" />
+        android:text="@string/blurb"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/directions"
@@ -41,9 +45,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="507dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="509dp"
+        android:fontFamily="georgia"
         android:text="@string/directions" />
 
     <ImageView
@@ -67,10 +71,11 @@
         android:layout_marginTop="43dp"
         android:layout_marginEnd="-8dp"
         android:layout_marginBottom="0dp"
-        android:fontFamily="arial"
+        android:fontFamily="georgia"
         android:text="@string/title"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="22sp"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

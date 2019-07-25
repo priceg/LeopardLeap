@@ -47,17 +47,10 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
     private Activity mActivity;
     private ConstraintLayout mConstraintLayout;
 
-    //NFC Related
-    private NfcAdapter mNfcAdapter;
-    private TextView nfcMessage;
-
-    private TextView test;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tour_guide__roadmap);
-        initNFC();
+        setContentView(R.layout.activity_visitor__roadmap);
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
         end_btn.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +131,9 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Visitor_Roadmap.this, Directions.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Title", title.getText().toString());
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -195,64 +191,4 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
         Log.v(TAG, "It's here it's here");
     }
 
-    public void onNfcDetected(Ndef ndef){
-
-        readFromNFC(ndef);
-    }
-
-    private void readFromNFC(Ndef ndef) {
-
-        try {
-            ndef.connect();
-            NdefMessage ndefMessage = ndef.getNdefMessage();
-
-            //String "message" contains the contents of the NFC tag in String form
-            String message = new String(ndefMessage.getRecords()[0].getPayload());
-            Log.d(TAG, "readFromNFC: " + message);
-            ndef.close();
-
-        } catch (IOException | FormatException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    private void initNFC(){
-
-        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
-        IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
-        IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
-        IntentFilter[] nfcIntentFilter = new IntentFilter[]{techDetected,tagDetected,ndefDetected};
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-        if(mNfcAdapter!= null)
-            mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(mNfcAdapter!= null)
-            mNfcAdapter.disableForegroundDispatch(this);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-
-        Log.d(TAG, "onNewIntent: "+intent.getAction());
-
-        if(tag != null) {
-            Toast.makeText(this, getString(R.string.tag_detected), Toast.LENGTH_SHORT).show();
-            Ndef ndef = Ndef.get(tag);
-            onNfcDetected(ndef);
-        }
-    }
 }

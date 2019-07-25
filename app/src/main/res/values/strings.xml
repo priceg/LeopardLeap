@@ -84,7 +84,9 @@
 
     <!--Directions-->
     <string name="back2">GO BACK</string>
-    <string name="route">Here Is The Route To Your Destination</string>
+    <string name="nfc_first">Tap The Tag At Your Starting Location</string>
+    <string name="route_second">Here Is The Route To Your Destination</string>
+    <string name="here">You\'re Already There!</string>
 
 
     <!--NFC-->
