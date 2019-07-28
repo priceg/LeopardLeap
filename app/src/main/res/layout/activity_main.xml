@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/theLayout"
         android:layout_width="395dp"
         android:layout_height="336dp"
         android:layout_marginStart="8dp"
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Login"
-            android:onClick="tryLogin"/>
+            android:onClick="tryData"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -28,4 +28,12 @@ public class MainActivity extends AppCompatActivity {
         BackgroundWorker bw = new BackgroundWorker(this);
         bw.execute(type, eusn, epwd);
     }
+    public void tryData(View view)
+    {
+        Integer id = new Integer(2);
+        String type = "data";
+        BackgroundWorker bw = new BackgroundWorker(this);
+        bw.execute(type, id.toString());
+    }
+
 }

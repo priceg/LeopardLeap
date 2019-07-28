@@ -1,9 +1,14 @@
 package com.example.leopardleap;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -29,13 +34,13 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... args) {
         String type = args[0];
-        String dbSite = "http://192.168.1.212/login.php";
+        String loginSite = "http://192.168.1.212/login.php";
         if(type.equals("login"))
         {
             try {
                 String username = args[1];
                 String password = args[2];
-                URL url = new URL(dbSite);
+                URL url = new URL(loginSite);
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setDoInput(true);
@@ -63,13 +68,14 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 connection.disconnect();
                 return result;
             } catch (MalformedURLException e) {
-                Log.v("GP2", "Malformed Error");
+                Log.v("GP2", "Malformed Error on login");
                 e.printStackTrace();
             } catch (IOException e) {
-                Log.v("GP2", "IO Error");
+                Log.v("GP2", "IO Error on login");
                 e.printStackTrace();
             }
         }
+
         return null;
     }
 
