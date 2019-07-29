@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_custom_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="2dp"
-    android:background="#c9242b"
-    >
+    android:background="@drawable/info_background"
+    android:padding="2dp">
 
     <ImageButton
         android:id="@+id/close"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
+        android:layout_width="43dp"
+        android:layout_height="48dp"
         android:layout_alignTop="@+id/title"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-40dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginTop="-22dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/x_button" />
+        android:src="@android:drawable/ic_delete" />
 
     <TextView
         android:id="@+id/blurb"

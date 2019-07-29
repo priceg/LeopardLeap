@@ -2,10 +2,11 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rm_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Visitor_Roadmap"
-    android:id="@+id/rm_layout">
+    android:background="@drawable/my_button_bg"
+    tools:context=".TourGuide_Roadmap">
 
     <ImageView
         android:id="@+id/check3"
@@ -20,9 +21,9 @@
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372"
-        app:srcCompat="@drawable/check"
+        app:layout_constraintVertical_bias="0.413"
 
+        app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
     <ImageView
@@ -38,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
@@ -54,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
@@ -71,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
@@ -87,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372"
+        app:layout_constraintVertical_bias="0.413"
         app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
@@ -104,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372"
+        app:layout_constraintVertical_bias="0.413"
         app:srcCompat="@drawable/check"
         tools:visibility="visible" />
 
@@ -116,7 +117,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
@@ -132,7 +133,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +148,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
@@ -163,7 +164,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
@@ -179,7 +180,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +196,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#f16531"
+        android:background="@drawable/roadmap_buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
@@ -264,7 +265,7 @@
     <View
         android:id="@+id/view5"
         android:layout_width="120dp"
-        android:layout_height="5dp"
+        android:layout_height="6dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -346,33 +347,35 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="Tansey Gym"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/button1" />
 
     <TextView
         android:id="@+id/beatty_hall"
         android:layout_width="75dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="Beatty Hall"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <TextView
         android:id="@+id/wattson_auditorium"
@@ -382,15 +385,17 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="Wattson Auditorium"
         android:textAlignment="center"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 
     <TextView
         android:id="@+id/leopard_statue"
@@ -399,17 +404,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="Leopard Statue"
         android:textAlignment="center"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/button6"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/baker_hall"
@@ -419,16 +426,18 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="Baker    Hall"
         android:textAlignment="center"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/button5"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/huntington_555"
@@ -438,30 +447,17 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="5dp"
         android:fontFamily="georgia"
         android:text="555 Huntington"
         android:textAlignment="center"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/nfc_contents"
-        android:layout_width="206dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/container"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/button4" />
 
 
     <FrameLayout
@@ -477,6 +473,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></FrameLayout>
+        app:layout_constraintVertical_bias="0.0">
+        
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
