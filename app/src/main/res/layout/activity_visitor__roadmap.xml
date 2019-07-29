@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_button_bg"
+    android:background="@drawable/app_background"
     tools:context=".Visitor_Roadmap"
     android:id="@+id/rm_layout">
 
@@ -214,7 +214,7 @@
         android:fontFamily="arial"
         android:text="@string/header"
         android:textAllCaps="true"
-        android:textColor="#e21e26"
+        android:textColor="#f89c1b"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -234,7 +234,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="georgia"
         android:text="@string/select"
-        android:textColor="#f89c1b"
+        android:textColor="#e21e26"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -377,7 +377,7 @@
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
     <TextView
-        android:id="@+id/wattson_auditorium"
+        android:id="@+id/watson_auditorium"
         android:layout_width="75dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -386,7 +386,7 @@
         android:layout_marginBottom="8dp"
         android:elevation="5dp"
         android:fontFamily="georgia"
-        android:text="Wattson Auditorium"
+        android:text="Watson Auditorium"
         android:textAlignment="center"
         android:textSize="11sp"
         android:textStyle="bold"

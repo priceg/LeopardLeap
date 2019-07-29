@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_button_bg"
+    android:background="@drawable/app_background"
     tools:context=".Visitor_Landing">
 
     <Button
@@ -42,7 +42,6 @@
         app:layout_constraintVertical_bias="0.892" />
 
 
-
     <TextView
         android:id="@+id/tap_message_C"
         android:layout_width="wrap_content"
@@ -72,7 +71,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="georgia"
         android:text="@string/tap_message_D"
-        android:textColor="#f89c1b"
+        android:textColor="#c9242b"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,7 +88,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#F9F9F9"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -114,5 +113,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603" />
-  
+
+    <TextView
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="georgia"
+        android:text="@string/connect"
+        android:textColor="#f89c1b"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116" />
+
 </android.support.constraint.ConstraintLayout>

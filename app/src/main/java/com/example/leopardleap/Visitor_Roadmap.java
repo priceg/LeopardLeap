@@ -35,7 +35,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
 
     //Buttons for checkpoints along Roadmap
     private Button tansey;
-    private Button wattson;
+    private Button watson;
     private Button beatty;
     private Button leopard;
     private Button baker;
@@ -69,7 +69,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
         //Necessary XML widgets (layout + buttons)
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.rm_layout);
         tansey = (Button) findViewById(R.id.button1);
-        wattson = (Button) findViewById(R.id.button2);
+        watson = (Button) findViewById(R.id.button2);
         beatty = (Button) findViewById(R.id.button3);
         leopard = (Button) findViewById(R.id.button6);
         baker = (Button) findViewById(R.id.button5);
@@ -79,7 +79,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
 
         //Series of click listeners for each button, calls default onClick which contains switch
         tansey.setOnClickListener(this);
-        wattson.setOnClickListener(this);
+        watson.setOnClickListener(this);
         beatty.setOnClickListener(this);
         leopard.setOnClickListener(this);
         baker.setOnClickListener(this);
@@ -149,8 +149,8 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.button2:
-                title.setText("Wattson Auditorium");
-                blurb.setText(getString(R.string.wattson_blurb));
+                title.setText("Watson Auditorium");
+                blurb.setText(getString(R.string.watson_blurb));
                 picture.setImageResource(R.drawable.wattson);
                 Log.v(TAG, "Current Title: " + title.getText());
                 break;
