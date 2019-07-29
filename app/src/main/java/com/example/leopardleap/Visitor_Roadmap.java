@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,11 +32,16 @@ public class Visitor_Roadmap extends AppCompatActivity {
 
     private PopupWindow mPopupWindow;
 
+    private String ipAddress;
+
+    private Thread thread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitor__roadmap);
-
+        Intent intent = getIntent();
+        ipAddress = intent.getStringExtra("ip address");
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
         end_btn.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +139,11 @@ public class Visitor_Roadmap extends AppCompatActivity {
                 Log.v(TAG, "It's here it's here");
             }
         });
+
+        Handler handler = new Handler();
+        VisitorConnect vc = new VisitorConnect(mContext, ipAddress, handler, this);
+        thread = new Thread(vc);
+        thread.start();
 
 
     }

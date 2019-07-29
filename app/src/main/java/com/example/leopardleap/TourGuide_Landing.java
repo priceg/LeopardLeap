@@ -1,6 +1,11 @@
 package com.example.leopardleap;
 
 import android.content.Intent;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,10 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class TourGuide_Landing extends AppCompatActivity {
+public class TourGuide_Landing extends AppCompatActivity implements NfcAdapter.CreateNdefMessageCallback {
 
     TourGuideConnect tc;
 
@@ -78,9 +84,24 @@ public class TourGuide_Landing extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        tc = new TourGuideConnect(getApplicationContext());
-        Thread thread = new Thread(tc);
-        thread.start();
+
+        Handler handler = new Handler();
+        tc = new TourGuideConnect(getApplicationContext(), handler);
+        LeopardLeap landing_context = ((LeopardLeap) getApplicationContext());
+        landing_context.setServer(tc);
+        landing_context.startServer();
+        NfcAdapter mAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (mAdapter == null) {
+            Log.v("GP2","Ya done now. No NFC.");
+            return;
+        }
+
+        if (!mAdapter.isEnabled()) {
+            Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
+        }
+
+        mAdapter.setNdefPushMessageCallback(this, this);
+
     }
 
     protected void tap(View v)
@@ -88,4 +109,24 @@ public class TourGuide_Landing extends AppCompatActivity {
         tc.tap();
     }
 
+    @Override
+    public NdefMessage createNdefMessage(NfcEvent event) {
+        String ip = "192.168.1.207";
+        NdefRecord ndefRecord = NdefRecord.createMime("text/plain", ip.getBytes());
+        NdefMessage ndefMessage = new NdefMessage(ndefRecord);
+        count++;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(count < 10){
+                    counter.setText(getString(R.string.counter) + " 0" + count);
+                }
+                else {
+                    counter.setText(getString(R.string.counter) + " " + count);
+                }
+            }
+        });
+
+        return ndefMessage;
+    }
 }

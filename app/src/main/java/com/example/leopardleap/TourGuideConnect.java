@@ -12,6 +12,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TourGuideConnect implements Runnable{
+    public static final int SERVER_PORT = 10001;
+    private CommunicationThread commThread;
+    ServerSocket serverSocket;
     Context context;
     ServerSocket ss;
     Socket client;
@@ -22,45 +25,49 @@ public class TourGuideConnect implements Runnable{
     String notify;
     Handler handler = new Handler();
     boolean tapped;
-    public TourGuideConnect(Context c)
+    public TourGuideConnect(Context c, Handler h)
     {
         context = c;
         tapped = false;
+        handler = h;
+    }
+    public void setContext(Context c)
+    {
+        context = c;
+    }
+    public void setHandler(Handler h)
+    {
+        handler = h;
     }
     @Override
     public void run() {
-
+        Socket socket;
         try {
-            ss = new ServerSocket(10001);
-            while(true)
-            {
-                client = ss.accept();
-                din = new DataInputStream(client.getInputStream());
-                message = din.readUTF();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                if(tapped)
-                {
-                    //send notification message to client
-                    dout = new DataOutputStream(client.getOutputStream());
-                    notify = "notify";
-                    dout.writeUTF(notify);
-                    dout.close();
-                    tapped = false;
-                }
-            }
+            serverSocket = new ServerSocket(SERVER_PORT);
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(context, "Error Starting Server :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        if (null != serverSocket) {
+            while (!Thread.currentThread().isInterrupted()) {
+                try {
+                    socket = serverSocket.accept();
+                    commThread = new CommunicationThread(socket, context, handler);
+                    new Thread(commThread).start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(context, "Error Communicating to Client :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 
     public void tap()
     {
         tapped = true;
+    }
+
+    public CommunicationThread getCommThread() {
+        return commThread;
     }
 }

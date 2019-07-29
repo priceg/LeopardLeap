@@ -12,6 +12,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.os.Build;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -59,11 +60,19 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
 
     private TextView test;
 
+    private TourGuideConnect server;
+    private int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_guide__roadmap);
         initNFC();
+        LeopardLeap map_context = ((LeopardLeap)getApplicationContext());
+        server = map_context.getServer();
+        server.setContext(getApplicationContext());
+        Handler handler = new Handler();
+        server.setHandler(handler);
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
         end_btn.setOnClickListener(new View.OnClickListener() {
@@ -215,12 +224,29 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
             //String "message" contains the contents of the NFC tag in String form
             String message = new String(ndefMessage.getRecords()[0].getPayload());
             Log.d(TAG, "readFromNFC: " + message);
+            sendMessage(checkCheckpoints());
             ndef.close();
+
 
         } catch (IOException | FormatException e) {
             e.printStackTrace();
 
         }
+    }
+
+    private int checkCheckpoints() {
+        ImageView check = (ImageView)findViewById(R.id.check1);
+        check.setElevation(0);
+        count++;
+
+        return count;
+
+    }
+
+    private void sendMessage(int c)
+    {
+        Integer message = new Integer(c);
+        server.getCommThread().sendMessage(message.toString());
     }
 
     private void initNFC(){
