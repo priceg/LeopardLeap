@@ -1,10 +1,14 @@
 package com.example.leopardleap;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -80,8 +84,11 @@ public class VisitorConnect implements Runnable {
                                 new OutputStreamWriter(socket.getOutputStream())),
                                 true);
                         out.println(message);
+                        Log.v("GP2","Message sent: " + message);
                     }
+                    Log.v("GP2","Null Socket");
                 } catch (Exception e) {
+                    Log.v("GP2","Message Error.");
                     e.printStackTrace();
                 }
             }
@@ -90,45 +97,18 @@ public class VisitorConnect implements Runnable {
 
     public void checkCheckpoints(String n)
     {
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                ImageView leopard_check = activity.findViewById(R.id.check2);
-                ImageView tansey_check = activity.findViewById(R.id.check3);
-                ImageView beatty_check = activity.findViewById(R.id.check);
-                ImageView baker_check = activity.findViewById(R.id.check4);
-                ImageView watson_check = activity.findViewById(R.id.check1);
-                ImageView huntington_check = activity.findViewById(R.id.check5);
-
-                switch(n) {
-                    case "1001":
-                        leopard_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    case "1003":
-                        beatty_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    case "1005":
-                        tansey_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    case "1007":
-                        huntington_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    case "1009":
-                        baker_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    case "1011":
-                        watson_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
+        handler.post(new VisitHandler(n, activity));
 
     }
 
     public void pushNotification(String n)
     {
+        NotificationManager notif=(NotificationManager)activity.getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification notify=new Notification.Builder
+                (activity.getApplicationContext()).setContentTitle("Leopard Leap").setContentText("Your tour guide has reached a checkpoint. Check the road map to catch up").
+                setContentTitle("Tour reached a checkpoint").setSmallIcon(R.drawable.leopard).setPriority(Notification.PRIORITY_HIGH).setVibrate(new long[0]).build();
 
+        notify.flags |= Notification.FLAG_AUTO_CANCEL;
+        notif.notify(0, notify);
     }
 }

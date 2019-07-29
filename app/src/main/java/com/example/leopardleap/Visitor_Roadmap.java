@@ -59,6 +59,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
 
         Intent intent = getIntent();
         ipAddress = intent.getStringExtra("ip address");
+        Log.v("GP2","IP address: " + ipAddress);
 
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
@@ -93,6 +94,12 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
         leopard.setOnClickListener(this);
         baker.setOnClickListener(this);
         huntington.setOnClickListener(this);
+
+        Handler handler = new Handler();
+        VisitorConnect vc = new VisitorConnect(mContext, ipAddress, handler, this);
+        Log.v("GP2","Made client object");
+        thread = new Thread(vc);
+        thread.start();
 
     }
 
@@ -148,10 +155,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        Handler handler = new Handler();
-        VisitorConnect vc = new VisitorConnect(mContext, ipAddress, handler, this);
-        thread = new Thread(vc);
-        thread.start();
+
 
 
 

@@ -6,6 +6,7 @@ import android.nfc.NfcAdapter;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -60,6 +61,7 @@ public class Visitor_Landing extends AppCompatActivity {
             intent = new Intent();
             intent.setClass( Visitor_Landing.this, Visitor_Roadmap.class);
             intent.putExtra("ip address", ip);
+            Log.v("GP2","Starting new activity");
             startActivity(intent);
 
 
