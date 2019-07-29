@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_background"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/visitor_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="91dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -28,8 +28,8 @@
 
     <Button
         android:id="@+id/guide_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="91dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -88,7 +88,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="arial"
         android:text="@string/welcome"
-        android:textColor="#f89c1b"
+        android:textColor="#e21e26"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="georgia"
         android:text="LeopardLeap"
-        android:textColor="#e21e26"
+        android:textColor="#f89c1b"
         android:textSize="26sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"

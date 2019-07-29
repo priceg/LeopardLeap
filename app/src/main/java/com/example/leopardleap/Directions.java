@@ -61,7 +61,7 @@ public class Directions extends AppCompatActivity {
     //1005 == Tansey Gym
     //1007 == 555 Huntington
     //1009 == Baker Hall
-    //1011 == Wattson Auditorium
+    //1011 == Watson Auditorium
     //Location IDs in Database
     private void readFromNFC(Ndef ndef) {
 
@@ -75,7 +75,7 @@ public class Directions extends AppCompatActivity {
 
             Bundle bundle = this.getIntent().getExtras();
             String title = bundle.getString("Title");
-            Log.d(TAG, "We got it SECOND: " + title);
+
 
             switch(message) {
 
@@ -94,7 +94,7 @@ public class Directions extends AppCompatActivity {
                         case "Baker Hall":
                             map.setImageResource(R.drawable.statue_to_baker);
                             break;
-                        case "Wattson Auditorium":
+                        case "Watson Auditorium":
                             map.setImageResource(R.drawable.statue_to_aud);
                             break;
                         default:
@@ -119,7 +119,7 @@ public class Directions extends AppCompatActivity {
                         case "Baker Hall":
                             map.setImageResource(R.drawable.beatty_to_baker);
                             break;
-                        case "Wattson Auditorium":
+                        case "Watson Auditorium":
                             map.setImageResource(R.drawable.beatty_to_aud);
                             break;
                         default:
@@ -144,7 +144,7 @@ public class Directions extends AppCompatActivity {
                         case "Baker Hall":
                             map.setImageResource(R.drawable.gym_to_baker);
                             break;
-                        case "Wattson Auditorium":
+                        case "Watson Auditorium":
                             map.setImageResource(R.drawable.gym_to_aud);
                             break;
                         default:
@@ -169,7 +169,7 @@ public class Directions extends AppCompatActivity {
                         case "Baker Hall":
                             map.setImageResource(R.drawable._555_to_baker);
                             break;
-                        case "Wattson Auditorium":
+                        case "Watson Auditorium":
                             map.setImageResource(R.drawable._555_to_aud);
                             break;
                         default:
@@ -194,7 +194,7 @@ public class Directions extends AppCompatActivity {
                         case "555 Huntington Ave":
                             map.setImageResource(R.drawable.baker_to_555);
                             break;
-                        case "Wattson Auditorium":
+                        case "Watson Auditorium":
                             map.setImageResource(R.drawable.baker_to_aud);
                             break;
                         default:
@@ -204,7 +204,7 @@ public class Directions extends AppCompatActivity {
                     }
                     break;
 
-                //From Wattson Auditorium To ______
+                //From Watson Auditorium To ______
                 case "1011":
                     switch (title) {
                         case "The Leopard Statue":
@@ -240,7 +240,6 @@ public class Directions extends AppCompatActivity {
     }
 
     private void initNFC(){
-
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
 

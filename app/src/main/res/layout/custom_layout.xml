@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_custom_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="2dp"
-    android:background="#c9242b"
-    >
+    android:background="@drawable/popup_shape"
+    android:padding="2dp">
 
     <ImageButton
         android:id="@+id/close"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
+        android:layout_width="43dp"
+        android:layout_height="48dp"
         android:layout_alignTop="@+id/title"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-40dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginTop="-32dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/x_button" />
+        android:src="@android:drawable/ic_delete" />
 
     <TextView
         android:id="@+id/blurb"
@@ -36,17 +34,18 @@
         android:text="@string/blurb"
         android:textColor="#000000"
         android:textSize="13sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/directions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="509dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="505dp"
+        android:background="@drawable/my_button_bg"
         android:fontFamily="georgia"
         android:text="@string/directions" />
 
@@ -76,6 +75,6 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold|italic" />
 
 </RelativeLayout>

@@ -44,12 +44,12 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     private ImageView tansey_check;
     private ImageView huntington_check;
     private ImageView baker_check;
-    private ImageView wattson_check;
+    private ImageView watson_check;
 
 
     //Buttons for checkpoints along Roadmap
     private Button tansey;
-    private Button wattson;
+    private Button watson;
     private Button beatty;
     private Button leopard;
     private Button baker;
@@ -88,7 +88,7 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
         //Necessary XML widgets (layout + buttons)
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.rm_layout);
         tansey = (Button) findViewById(R.id.button1);
-        wattson = (Button) findViewById(R.id.button2);
+        watson = (Button) findViewById(R.id.button2);
         beatty = (Button) findViewById(R.id.button3);
         leopard = (Button) findViewById(R.id.button6);
         baker = (Button) findViewById(R.id.button5);
@@ -98,14 +98,14 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
         tansey_check = findViewById(R.id.check3);
         beatty_check = findViewById(R.id.check);
         baker_check = findViewById(R.id.check4);
-        wattson_check = findViewById(R.id.check1);
+        watson_check = findViewById(R.id.check1);
         huntington_check = findViewById(R.id.check5);
 
         Log.v(TAG, "Button1 is clicked");
 
         //Series of click listeners for each button, calls default onClick which contains switch
         tansey.setOnClickListener(this);
-        wattson.setOnClickListener(this);
+        watson.setOnClickListener(this);
         beatty.setOnClickListener(this);
         leopard.setOnClickListener(this);
         baker.setOnClickListener(this);
@@ -175,8 +175,8 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.button2:
-                title.setText("Wattson Auditorium");
-                blurb.setText(getString(R.string.wattson_blurb));
+                title.setText("Watson Auditorium");
+                blurb.setText(getString(R.string.watson_blurb));
                 picture.setImageResource(R.drawable.wattson);
                 Log.v(TAG, "Current Title: " + title.getText());
                 break;
@@ -248,7 +248,7 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
                     baker_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
                     break;
                 case "1011":
-                    wattson_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
+                    watson_check.setElevation(5 * this.getResources().getDisplayMetrics().density);
                     break;
                 default:
                     break;

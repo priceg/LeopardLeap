@@ -4,6 +4,7 @@
 
     <string name="app_name">LeopardLeap</string>
     <string name="end_btn">End Tour</string>
+    <string name="connect">Connect To Your Group!</string>
 
     <!--MainActivity-->
     <string name="visitor_btn">Visitor</string>
@@ -59,7 +60,7 @@
     <string name="tansey_blurb">Tansey Gymnasium is located in the Nelson Recreation
                 Center. Holds indoor athletic games and other events.</string>
 
-    <string name="wattson_blurb">Home to Watson Auditorium, a space for showcases,
+    <string name="watson_blurb">Home to Watson Auditorium, a space for showcases,
                 exhibitions, banquets and more. </string>
 
     <string name="beatty_blurb">Beatty Hall houses the Flanagan Campus Center,
