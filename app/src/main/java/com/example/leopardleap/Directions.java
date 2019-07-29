@@ -249,6 +249,7 @@ public class Directions extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
         Log.d(TAG, "onResume entered");
         super.onResume();
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
@@ -259,6 +260,7 @@ public class Directions extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
         if(mNfcAdapter!= null)
+            Log.d(TAG, "DIRECTIONS: enableForegroundDispatch");
             mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
     }
 
@@ -267,6 +269,7 @@ public class Directions extends AppCompatActivity {
         Log.d(TAG, "onPause entered");
         super.onPause();
         if(mNfcAdapter!= null)
+            Log.d(TAG, "Directions disabled");
             mNfcAdapter.disableForegroundDispatch(this);
     }
 
