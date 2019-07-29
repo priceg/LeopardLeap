@@ -75,6 +75,7 @@ public class Directions extends AppCompatActivity {
 
             Bundle bundle = this.getIntent().getExtras();
             String title = bundle.getString("Title");
+            Log.d(TAG, "Bundle received");
 
 
             switch(message) {
@@ -231,9 +232,11 @@ public class Directions extends AppCompatActivity {
                 default:
                     break;
             }
+            Log.d(TAG, "Image set");
             ndef.close();
 
         } catch (IOException | FormatException e) {
+            Log.d(TAG, "BIG ERROR");
             e.printStackTrace();
 
         }
@@ -245,6 +248,7 @@ public class Directions extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        Log.d(TAG, "onResume entered");
         super.onResume();
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
@@ -259,6 +263,7 @@ public class Directions extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        Log.d(TAG, "onPause entered");
         super.onPause();
         if(mNfcAdapter!= null)
             mNfcAdapter.disableForegroundDispatch(this);
