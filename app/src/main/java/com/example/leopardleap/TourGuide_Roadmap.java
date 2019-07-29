@@ -12,6 +12,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.os.Build;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -64,12 +65,20 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     private NfcAdapter mNfcAdapter;
 
 
+    private TourGuideConnect server;
+    private int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_guide__roadmap);
 
         initNFC();
+        LeopardLeap map_context = ((LeopardLeap)getApplicationContext());
+        server = map_context.getServer();
+        server.setContext(getApplicationContext());
+        Handler handler = new Handler();
+        server.setHandler(handler);
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
         end_btn.setOnClickListener(new View.OnClickListener() {
@@ -253,7 +262,11 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
                 default:
                     break;
             }
+
+            sendMessage(message);
+
             ndef.close();
+
 
         } catch (IOException | FormatException e) {
             e.printStackTrace();
@@ -261,7 +274,13 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
         }
     }
 
-        private void initNFC(){
+
+    private void sendMessage(String c)
+    {
+        server.getCommThread().sendMessage(message);
+    }
+
+    private void initNFC(){
 
             mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         }

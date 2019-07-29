@@ -11,6 +11,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.os.Build;
+import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,10 +48,18 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
     private Activity mActivity;
     private ConstraintLayout mConstraintLayout;
 
+    private String ipAddress;
+
+    private Thread thread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitor__roadmap);
+
+        Intent intent = getIntent();
+        ipAddress = intent.getStringExtra("ip address");
+
 
         Button end_btn = (Button) findViewById(R.id.end_btn);
         end_btn.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +134,7 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+
         //Set custom click listener for the "Get Directions" button
         directions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +147,13 @@ public class Visitor_Roadmap extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent);
             }
         });
+
+        Handler handler = new Handler();
+        VisitorConnect vc = new VisitorConnect(mContext, ipAddress, handler, this);
+        thread = new Thread(vc);
+        thread.start();
+
+
 
         //Switch for each case for buttons, populates new popup instance with corresponding info
         switch (v.getId()) {
