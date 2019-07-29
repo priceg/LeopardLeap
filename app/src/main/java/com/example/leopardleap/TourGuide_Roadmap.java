@@ -275,7 +275,7 @@ public class TourGuide_Roadmap extends AppCompatActivity implements View.OnClick
     }
 
 
-    private void sendMessage(String c)
+    private void sendMessage(String message)
     {
         server.getCommThread().sendMessage(message);
     }

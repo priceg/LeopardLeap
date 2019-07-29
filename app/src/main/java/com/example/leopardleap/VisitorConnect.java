@@ -93,8 +93,35 @@ public class VisitorConnect implements Runnable {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                ImageView check = activity.findViewById(R.id.check1);
-                check.setElevation(0);
+                ImageView leopard_check = activity.findViewById(R.id.check2);
+                ImageView tansey_check = activity.findViewById(R.id.check3);
+                ImageView beatty_check = activity.findViewById(R.id.check);
+                ImageView baker_check = activity.findViewById(R.id.check4);
+                ImageView watson_check = activity.findViewById(R.id.check1);
+                ImageView huntington_check = activity.findViewById(R.id.check5);
+
+                switch(n) {
+                    case "1001":
+                        leopard_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    case "1003":
+                        beatty_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    case "1005":
+                        tansey_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    case "1007":
+                        huntington_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    case "1009":
+                        baker_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    case "1011":
+                        watson_check.setElevation(5 * activity.getResources().getDisplayMetrics().density);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 

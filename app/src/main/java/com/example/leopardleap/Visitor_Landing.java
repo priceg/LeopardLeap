@@ -43,8 +43,6 @@ public class Visitor_Landing extends AppCompatActivity {
             }
         });
 
-        tester = (TextView) findViewById(R.id.textView);
-
 
 
     }
@@ -59,15 +57,12 @@ public class Visitor_Landing extends AppCompatActivity {
 
             NdefMessage message = (NdefMessage) rawMessages[0]; // only one message transferred
             ip = new String(message.getRecords()[0].getPayload());
-            tester.setText(ip);
             intent = new Intent();
             intent.setClass( Visitor_Landing.this, Visitor_Roadmap.class);
             intent.putExtra("ip address", ip);
             startActivity(intent);
 
 
-        } else
-            tester.setText("Waiting for NDEF Message");
-
+        }
     }
 }
