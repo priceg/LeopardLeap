@@ -43,9 +43,10 @@ public class Directions extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass( Directions.this, TourGuide_Roadmap.class);
-                startActivity(intent);
+                //Intent intent = new Intent();
+                //intent.setClass( Directions.this, TourGuide_Roadmap.class);
+                //startActivity(intent);
+                finish();
             }
         });
     }
