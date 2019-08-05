@@ -111,7 +111,7 @@ public class TourGuide_Landing extends AppCompatActivity implements NfcAdapter.C
 
     @Override
     public NdefMessage createNdefMessage(NfcEvent event) {
-        String ip = "10.220.88.251";
+        String ip = "192.168.1.207";
         NdefRecord ndefRecord = NdefRecord.createMime("text/plain", ip.getBytes());
         NdefMessage ndefMessage = new NdefMessage(ndefRecord);
         count++;
