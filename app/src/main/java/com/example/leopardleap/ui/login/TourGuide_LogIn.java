@@ -131,7 +131,7 @@ public class TourGuide_LogIn extends AppCompatActivity {
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome2) + model.getDisplayName();
+        String welcome = getString(R.string.welcome2) + " " + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Intent intent = new Intent();
         intent.setClass(TourGuide_LogIn.this, TourGuide_Landing.class);

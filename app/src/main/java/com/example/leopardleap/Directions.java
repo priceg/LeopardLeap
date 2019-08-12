@@ -43,9 +43,7 @@ public class Directions extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass( Directions.this, TourGuide_Roadmap.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -75,6 +73,7 @@ public class Directions extends AppCompatActivity {
 
             Bundle bundle = this.getIntent().getExtras();
             String title = bundle.getString("Title");
+            Log.d(TAG, "Bundle received");
 
 
             switch(message) {
@@ -231,9 +230,11 @@ public class Directions extends AppCompatActivity {
                 default:
                     break;
             }
+            Log.d(TAG, "Image set");
             ndef.close();
 
         } catch (IOException | FormatException e) {
+            Log.d(TAG, "BIG ERROR");
             e.printStackTrace();
 
         }
@@ -245,6 +246,8 @@ public class Directions extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
+        Log.d(TAG, "onResume entered");
         super.onResume();
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
@@ -254,13 +257,16 @@ public class Directions extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
         if(mNfcAdapter!= null)
+            Log.d(TAG, "DIRECTIONS: enableForegroundDispatch");
             mNfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
     }
 
     @Override
     protected void onPause() {
+        Log.d(TAG, "onPause entered");
         super.onPause();
         if(mNfcAdapter!= null)
+            Log.d(TAG, "Directions disabled");
             mNfcAdapter.disableForegroundDispatch(this);
     }
 
